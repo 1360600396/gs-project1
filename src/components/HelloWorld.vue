@@ -10,26 +10,17 @@
 					:class="current == index ? 'active' : ''"
 					@click="changeTitle(item, index)"
 				>
-				<div>
-					<span>{{ item.title }}</span>
-					<span> {{ item.subTitle }} </span>
+				<div class="title-box1">
+					<span class="title-boxfont1">{{ item.title }}</span>
+					<span class="title-boxfont2"> {{ item.subTitle }} </span>
 				</div>
-				<img src="" alt="">
+				<img :src=item.src alt="">
 				</div>
 			</div>
-			<div class="search-box">
-				<!-- <a-input-search
-				  v-model="value"
-				  placeholder="请输入课程名称"
-				  style="width: 392px;height: 52px;"
-          enter-button
-				  @search="onSearch"
-				/> -->
-        <div class="search">
-        <input type="text" placeholder="请输入关键词" v-model="value">
+			<div class="search">
+        <input type="text" placeholder="请输入课程名称" v-model="value">
         <a href="#" @click="search()"></a>
       </div>
-			</div>
 
 		</div>
 		<div class="list-box" v-if="current==0">
@@ -38,7 +29,7 @@
 					<div class="tips">{{ item.tips }}</div>
 					<!-- <img v-lazy="imgUrl" alt=""> -->
            <!-- <img src="../assets/广联达斑马进度计划软件2020教学视频（详细功能教学合集，分9部分） (3).png" alt=""> -->
-		   <img :src=item.srcimg alt="">
+		   <img :src=item.srcimg alt="" width="214.4px" height="150px">
 		   <!-- <img src="../assets/banner1/新-教学视频小节封面_04.png" alt=""> -->
 					<div class="list-desc">
 						<div class="title">{{ item.title }}</div>
@@ -96,64 +87,65 @@ export default {
 		searchResults: [],
 				imgUrl: "https://build.glodonedu.com/oss/image/byid/3574132519423513066",
 				titles: [
-					{id: 1, title: "软件学习", subTitle: "技能充电宝"},
-					{id: 2, title: "专家课堂", subTitle: "职场加速器"},
-					{id: 3, title: "直播回顾", subTitle: "精彩不打烊"},
+					{id: 1, title: "软件学习", subTitle: "技能充电宝",src:require('@/assets/wrap/软件学习@1x.png')},
+					{id: 2, title: "专家课堂", subTitle: "职场加速器",src:require('@/assets/wrap/专家课堂@1x.png')},
+					{id: 3, title: "直播回顾", subTitle: "精彩不打烊",src:require('@/assets/wrap/直播回顾@1x.png')},
+					{id: 4, title: "全部视频", subTitle: "精彩不打烊",src:require('@/assets/wrap/全部视频@1x.png')}
 				],
 				current: 0,
 				value: "", // 搜索框的值
 			
 				pics: [
 					{
-						id: 1, title: "1.1斑马进度计划产品介绍", tips: "软件学习", time: "时长：5分钟", src: 'https://jzkt.fwxgx.com/courses/24304/videos/157977/play',
+						id: 1, title: "1.1斑马进度计划产品介绍", tips: "软件学习", time: "05:03", src: 'https://jzkt.fwxgx.com/courses/24304/videos/157977/play',
 						srcimg: require('@/assets/banner1/新-教学视频小节封面_02.png')
 					},
 					{
-						id: 2, title: "1.2网络图基础知识", tips: "软件学习", time: "时长：5分钟", src: 'https://jzkt.fwxgx.com/courses/24304/videos/157705/play',
+						id: 2, title: "1.2网络图基础知识", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/157705/play',
 						srcimg: require('@/assets/banner1/新-教学视频小节封面_02.png')
 					},
 					{
-						id: 3, title: "1.3斑马进度计划界面介绍", tips: "软件学习", time: "时长：5分钟", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154346/play'
+						id: 3, title: "1.3斑马进度计划界面介绍", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154346/play'
 						,srcimg: require('@/assets/banner1/新-教学视频小节封面_02.png')
 					},
 					{
-						id: 4, title: "2.1新建与保存计划文件", tips: "软件学习", time: "时长：44秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154489/play'
+						id: 4, title: "2.1新建与保存计划文件", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154489/play'
 						,srcimg:require('@/assets/banner1/新-教学视频小节封面_02.png')
 					},
 					{
-						id: 5, title: "2.2如何找回备份文件", tips: "软件学习", time: "时长：47秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154490/play'
+						id: 5, title: "2.2如何找回备份文件", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154490/play'
 						,srcimg: require('@/assets/banner1/新-教学视频小节封面_02.png')
 					},
 					{
-						id: 6, title: "3.1如何打开黑白模式", tips: "软件学习", time: "时长：21秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154492/play'
+						id: 6, title: "3.1如何打开黑白模式", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154492/play'
 						,srcimg: require('@/assets/banner1/新-教学视频小节封面_02.png')
 					},
 					{
-						id: 7, title: "3.2如何设置护眼模式", tips: "软件学习", time: "时长：17秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154493/play'
+						id: 7, title: "3.2如何设置护眼模式", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154493/play'
 						,srcimg: require('@/assets/banner1/新-教学视频小节封面_02.png')
 					},
 					{
-						id: 8, title: "3.3多文件之间如何切换", tips: "软件学习", time: "时长：24秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154494/play'
+						id: 8, title: "3.3多文件之间如何切换", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154494/play'
 						,srcimg:require('@/assets/banner1/新-教学视频小节封面_02.png')
 					},
 					{
-						id: 9, title: "4.1如何添加休息日", tips: "软件学习", time: "时长：69秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154496/play'
+						id: 9, title: "4.1如何添加休息日", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154496/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_09.png'
 					},
 					{
-						id: 10, title: "4.2如何绘制常规工作", tips: "软件学习", time: "时长：1分钟", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154497/play'
+						id: 10, title: "4.2如何绘制常规工作", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154497/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_10.png'
 					},
 					{
-						id: 11, title: "4.3如何绘制穿插工作", tips: "软件学习", time: "时长：51秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154498/play'
+						id: 11, title: "4.3如何绘制穿插工作", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154498/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_11.png'
 					},
 					{
-						id: 12, title: "4.4如何连接和断开工作", tips: "软件学习", time: "时长：48秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154499/play'
+						id: 12, title: "4.4如何连接和断开工作", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154499/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_12.png'
 					},
 					{
-						id: 13, title: "4.5如何设置父子结构", tips: "软件学习", time: "时长：39秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154500/play'
+						id: 13, title: "4.5如何设置父子结构", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154500/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_13.png'
 					},
 					{
@@ -173,63 +165,63 @@ export default {
 						,srcimg: '../assets/banner1/新-教学视频小节封面_17.png'
 					},
 					{
-						id: 18, title: "4.10快速优化图幅展示", tips: "软件学习", time: "时长：53秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154505/play'
+						id: 18, title: "4.10快速优化图幅展示", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154505/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_18.png'
 					},
 					{
-						id: 19, title: "6.1如何快速形成周计划、月计划", tips: "软件学习", time: "时长：56秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154822/play'
+						id: 19, title: "6.1如何快速形成周计划、月计划", tips: "", time: "时长：56秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154822/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_19.png'
 					},
 					{
-						id: 20, title: "6.2前锋线基础原理讲解", tips: "软件学习", time: "时长：1分钟", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154823/play'
+						id: 20, title: "6.2前锋线基础原理讲解", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154823/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_20.png'
 					},
 					{
-						id: 21, title: "7.1工期固定资源均衡", tips: "软件学习", time: "时长：51秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154824/play'
+						id: 21, title: "7.1工期固定资源均衡", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154824/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_21.png'
 					},
 					{
-						id: 22, title: "7.2资源限量工期最短", tips: "软件学习", time: "时长：56秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154825/play'
+						id: 22, title: "7.2资源限量工期最短", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154825/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_22.png'
 					},
 					{
-						id: 23, title: "8.1如何导出图片", tips: "", time: "时长：33秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154507/play'
+						id: 23, title: "8.1如何导出图片", tips: "", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154507/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_23.png'
 					},
 					{
-						id: 24, title: "8.2如何导出Project文件", tips: "软件学习", time: "时长：53秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154508/play'
+						id: 24, title: "8.2如何导出Project文件", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154508/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_24.png'
 					},
 					{
-						id: 25, title: "8.3如何导出表格区域信息", tips: "软件学习", time: "时长：46秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154509/play'
+						id: 25, title: "8.3如何导出表格区域信息", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154509/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_25.png'
 					},
 					{
-						id: 26, title: "8.4如何导出PDF文件", tips: "软件学习", time: "时长：42秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154510/play'
+						id: 26, title: "8.4如何导出PDF文件", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154510/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_26.png'
 					},
 					{
-						id: 27, title: "9.1如何导入Project文件，形成网络图", tips: "软件学习", time: "时长：1分钟", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154826/play'
+						id: 27, title: "9.1如何导入Project文件，形成网络图", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154826/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_27.png'
 					},
 					{
-						id: 28, title: "9.2如何使用Excel文件，形成网络图", tips: "软件学习", time: "时长：5分钟", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154827/play'
+						id: 28, title: "9.2如何使用Excel文件，形成网络图", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154827/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_28.png'
 					},
 					{
-						id: 29, title: "10.1AI助手- AI助手介绍+操作说明", tips: "软件学习", time: "时长：14分钟", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162580/play'
+						id: 29, title: "10.1AI助手- AI助手介绍+操作说明", tips: "软件学习", time: "时长：", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162580/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_29.png'
 					},
 					{
-						id: 30, title: "10.2AI助手-AI生成施工总控计划", tips: "软件学习", time: "时长：8分钟", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162581/play'
+						id: 30, title: "10.2AI助手-AI生成施工总控计划", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162581/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_30.png'
 					},
 					{
-						id: 31, title: "10.3AI助手-AI推荐非实体工作", tips: "软件学习", time: "时长：1分钟", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162582/play'
+						id: 31, title: "10.3AI助手-AI推荐非实体工作", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162582/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_31.png'
 					},
 					{
-						id: 32, title: "10.4AI助手-AI推荐工作", tips: "软件学习", time: "时长：4分钟", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162583/play'
+						id: 32, title: "10.4AI助手-AI推荐工作", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162583/play'
 						,srcimg: '../assets/banner1/新-教学视频小节封面_32.png'
 					},
 				],
@@ -340,7 +332,7 @@ export default {
 		padding-top: 24px;
 		padding-left: 20px;
 		padding-bottom: 24px;
-		padding-right: 23px;
+		padding-right: 15px;
 		background-color: #F4F7FC;
                           
 	}
@@ -351,98 +343,127 @@ export default {
 		// padding: 10px 20px;
 		box-sizing: border-box;
 		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		
+		justify-content: start;
 		// padding: 5px 5px;
-		.active {
-			border: 3px solid blue;
-		}
-    .search {
-  display: flex;
-  margin-left: 64px;
-  padding-left: 19px;
-  padding-right: 12px;
-  width: 412px;
-  height: 40px;
-  background-color: blue;
-  border-radius: 20px;
-}
-
-.search input {
-   flex: 1;
-   border: 0;
-   background-color: transparent;
-   /* 去掉表单控件的焦点框 */
-   outline: none;
-}
-
-/* ::placeholder 选中就是 placeholder 属性文字样式*/
-.search input::placeholder {
-  font-size: 14px;
-  color: #999;
-}
-
-/* 父级是flex布局，子级变弹性盒子：加宽高生效 */
-.search a {
-  align-self: center;
-  width: 16px;
-  height: 16px;
-  background-image: url(../assets/search.png);
-}
-    .search-box {
-      // width: 100%;
-      // height: 100%;
-      border-radius: 5px;
-      margin-right: 30px;
-      position: relative;
-      ::v-deep button{
-        position: absolute;
-        top: 1px;
-        left: -42px;
-        height: 42px;
-        border-radius: 50% !important;
-        z-index: 100;
-      }
-      ::v-deep input{
-        // border-radius: 21px;
-        height: 46px;
-        
-      }
-
-    }
 		.title-box {
 			display: flex;
 			// border-radius: 10px;
-			
-			div {
+			justify-content: start;
+			// width: 68.835%;
+			// flex-wrap: wrap;
+			>div {
 				// padding: 12px 0px ;
 				box-sizing: border-box;
 				width: 192px;
-				height: 56px;
+				margin-right: 12px;
+				justify-content: space-between;
 				font-size: 17px;
 				display: flex;
 				// align-items: center;
 				// justify-content: center;
 				color: white;
-				span {
-					font-size: 0.5px;
-				}
+				border-radius: 8px;
+
 				&:nth-child(1) {
-					border-radius: 5px 0px 0px 5px;
-					background-color: #fc6a6b;
+					
+					background-color: #FFE2C7;
 				}
 				&:nth-child(2) {
-					background-color: #45cad9;
-					border-radius: 0px;
+					background-color: #C3E7FC;
+					
 					
 				}
 				&:nth-child(3) {
-					border-radius: 0px 5px 5px 0px;
-					background-color: #f5c45e;
+				
+					background-color: #ECDCFF;
+				}
+				&:nth-child(4) {
+					width: 224px;
+					background-color: #00D9C3;
+				}
+				.title-box1 {
+					flex: 1;
+					// background-color: red;
+					margin: 6px 0 6px 16px;
+					.title-boxfont1{
+						font-family: HarmonyOS Sans SC;
+						font-size: 18px;
+						font-weight: 500;
+            line-height: 24px;
+						display: block;
+						height: 24px;
+						color: #EA8735;
+					}
+					.title-boxfont2 {
+						display: block;
+						height: 20px;
+						line-height: 20x;
+						font-weight: 300;
+						color: #EA8735;
+						font-size: 12px;
+						font-family: HarmonyOS Sans SC;
+					}
 				}
 			}
 		
 		}
+		.active {
+			border: 1px solid blue;
+		}
+    .search {
+  display: flex;
+	border-radius: 8px;
+  padding: 10px 16px;
+  width: 317px;
+  height: 56px;
+  background: #FFFFFF;
+	justify-content: center;
+	position: relative;
+  
+	input {
+  //  flex: 1;
+   border: 0;
+   width: 285px;
+	 height: 36px;
+   /* 去掉表单控件的焦点框 */
+   outline: none;
+	 border: 1px solid #E2E8F0;
+	 box-sizing: border-box;
+	 padding: 7px 16px;
+	 border-radius: 4px;
+}
+input::placeholder {
+  font-family: HarmonyOS Sans SC;
+font-size: 14px;
+font-weight: normal;
+line-height: 22px;
+letter-spacing: 0em;
+
+font-variation-settings: "opsz" auto;
+/* Greyscale/500 */
+/* 样式描述：单位及小字说明色 */
+color: #96A0B5;
+}
+a {
+	position: absolute;
+	right: 32px;
+  align-self: center;
+  width: 16px;
+  height: 16px;
+  background-image: url(../assets/icon@1x.png);
+}
+}
+
+
+
+/* ::placeholder 选中就是 placeholder 属性文字样式*/
+
+
+/* 父级是flex布局，子级变弹性盒子：加宽高生效 */
+
+
+
 	}
 	// .search-box {
 	// 		width: 100%;
@@ -453,19 +474,23 @@ export default {
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
-    margin-top: 1.5em;
-    margin-right: -10px;
+    margin-top: 30px;
+    // padding-right: 11px;
     justify-content: start
 	}
 	.list-item {
-		width: 220px;
-    height: 170px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-		
-    margin-right: 50px;
-    margin-bottom: 55px;
+		width: 214.4px;
+    height: 196px;
+    border-radius: 8px;
+  
+		background: #FFFFFF;
+		padding: 0px 0px 12px 0px;
+    margin-right: 24px;
+    margin-bottom: 24px;
 		box-sizing: border-box;
+		&:nth-of-type(5n){
+			margin-right: 0px;
+		}
 		.list-item-box {
       height: 100%;
 			width: 100%;
@@ -493,11 +518,11 @@ export default {
 			.list-desc {
 				display: flex;
 				width: 100%;
-				height: 40px;
-				padding: 0 10px;
-        padding-right: 0px;
-				align-items: center;
-				justify-content: space-between;
+				margin-top: 13px;
+				height: 22px;
+        justify-content: space-between;
+				
+				
 				.title {
 					font-size: 10px;
 					font-weight: 600;
@@ -507,8 +532,13 @@ export default {
 					text-overflow: ellipsis;
 				}
 				.time {
-					width: 40%;
-					font-size: 10px;
+					margin-right: 12px;
+					height: 20px;
+					width: 31px;
+					font-family: HarmonyOS Sans SC;
+					font-size: 12px;
+					line-height: 20px;
+					color: #64748B;
 				}
 			}
 		}
@@ -516,101 +546,42 @@ export default {
 	}
 	
 	/* 当屏幕小于1400px */
+	@media screen and (min-width: 1400px){
+		.list-item {
+		
+		&:nth-of-type(5n){
+			margin-right: 24px;
+		}
+}
+	}
 	@media screen and (max-width: 1400px){
-		.list-box {
-		}
-		.list-desc {
-			.tips {
-				padding: 4px 8px;
-				color: white;
-				position: absolute;
-				top: 0px;
-				right: 0px;
-				background-color: deepskyblue;
-				border-bottom-left-radius: 10px;
-				border-top-right-radius: 10px;
-			}
-			.title {
-				font-size: 14px !important;
-				width: 60% !important;
-			}
-			.time {
-				font-size: 12px;
-				width: 40% !important;
-			}
-		}
+	
 	}
 	/* 当屏幕小于1200px */
-	@media screen and (max-width: 1200px){
-		.list-box {
-		}
+	@media screen and (max-width: 1220px){
 		.list-item {
-			width: 25%;
+		
+		&:nth-of-type(5n){
+			margin-right: 24px;
 		}
+}
 	}
 	
 	/* 当屏幕小于992px */
 	@media screen and (max-width: 992px){
-		.list-box {
-		}
 		
-		.list-desc {
-			display: flex;
-			flex-wrap: wrap;
-			.tips {
-				padding: 4px 8px;
-				font-size: 12px;
-				color: white;
-				position: absolute;
-				top: 0px;
-				right: 0px;
-				background-color: deepskyblue;
-				border-bottom-left-radius: 10px;
-				border-top-right-radius: 10px;
-			}
-			.title {
-				font-size: 14px !important;
-				width: 100% !important;
-			}
-			.time {
-				font-size: 12px;
-				width: 100% !important;
-			}
-		}
 		
 		
 	}
 	/* 当屏幕小于768 */
 	@media screen and (max-width: 768px){
-		.list-box {
-		}
-		.list-item {
-			width: 33.3%;
-		}
+
 	}
 	
 	
 	/* 当屏幕小于700 */
 	@media screen and (max-width: 700px){
-		.list-box {
-			}
-		.list-item {
-			width: 50%;
-		}
-		.condition-box {
-			display: flex;
-			flex-wrap: wrap;
-			margin: 40px 0;
-		}
-		.title-box { 
-			width: 100%;
-		}
-		.search-box {
-			width: 100%;
-      height: 100%;
-			margin-top: 20px;
-			
-		}
+	
 	}
 	
 	
