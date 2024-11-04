@@ -32,7 +32,7 @@
 		   <img :src=item.srcimg alt="" width="214.4px" height="150px">
 		   <!-- <img src="../assets/banner1/新-教学视频小节封面_04.png" alt=""> -->
 					<div class="list-desc">
-						<div class="title">{{ item.title }}</div>
+						<!-- <div class="title">{{ item.title }}</div> -->
 						<div class="time">{{ item.time }}</div>
 					</div>
 				</div>
@@ -45,10 +45,10 @@
 					<div class="tips">{{ item.tips }}</div>
 					<!-- <img v-lazy="imgUrl" alt=""> -->
            <!-- <img src="../assets/广联达斑马进度计划软件2020教学视频（详细功能教学合集，分9部分） (3).png" alt=""> -->
-		   <img :src=item.srcimg alt="">
-		  
+		   <img :src=item.srcimg alt="" width="214.4px" height="150px">
+		   <!-- <img src="../assets/banner1/新-教学视频小节封面_04.png" alt=""> -->
 					<div class="list-desc">
-						<div class="title">{{ item.title }}</div>
+						<!-- <div class="title">{{ item.title }}</div> -->
 						<div class="time">{{ item.time }}</div>
 					</div>
 				</div>
@@ -61,9 +61,26 @@
 					<div class="tips">{{ item.tips }}</div>
 					<!-- <img v-lazy="imgUrl" alt=""> -->
            <!-- <img src="../assets/广联达斑马进度计划软件2020教学视频（详细功能教学合集，分9部分） (3).png" alt=""> -->
-		   <img :src=item.srcimg alt="">
+		   <img :src=item.srcimg alt="" width="214.4px" height="150px">
+		   <!-- <img src="../assets/banner1/新-教学视频小节封面_04.png" alt=""> -->
 					<div class="list-desc">
-						<div class="title">{{ item.title }}</div>
+						<!-- <div class="title">{{ item.title }}</div> -->
+						<div class="time">{{ item.time }}</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="list-box" v-if="current==3">
+			<div  class="list-item" v-for="(item, index) in searchResults" :key="index" @click="fn(item)">
+				<div class="list-item-box">
+					<div class="tips">{{ item.tips }}</div>
+					<!-- <img v-lazy="imgUrl" alt=""> -->
+           <!-- <img src="../assets/广联达斑马进度计划软件2020教学视频（详细功能教学合集，分9部分） (3).png" alt=""> -->
+		   <img :src=item.srcimg alt="" width="214.4px" height="150px">
+		   <!-- <img src="../assets/banner1/新-教学视频小节封面_04.png" alt=""> -->
+					<div class="list-desc">
+						<!-- <div class="title">{{ item.title }}</div> -->
 						<div class="time">{{ item.time }}</div>
 					</div>
 				</div>
@@ -98,146 +115,202 @@ export default {
 				pics: [
 					{
 						id: 1, title: "1.1斑马进度计划产品介绍", tips: "软件学习", time: "05:03", src: 'https://jzkt.fwxgx.com/courses/24304/videos/157977/play',
+						srcimg: require('@/assets/banner1/新-教学视频小节封面_01.png')
+					},
+					{
+						id: 2, title: "1.2网络图基础知识", tips: "软件学习", time: "05:02", src: 'https://jzkt.fwxgx.com/courses/24304/videos/157705/play',
 						srcimg: require('@/assets/banner1/新-教学视频小节封面_02.png')
 					},
 					{
-						id: 2, title: "1.2网络图基础知识", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/157705/play',
-						srcimg: require('@/assets/banner1/新-教学视频小节封面_02.png')
+						id: 3, title: "1.3斑马进度计划界面介绍", tips: "软件学习", time: "05:03", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154346/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_03.png')
 					},
 					{
-						id: 3, title: "1.3斑马进度计划界面介绍", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154346/play'
-						,srcimg: require('@/assets/banner1/新-教学视频小节封面_02.png')
+						id: 4, title: "2.1新建与保存计划文件", tips: "软件学习", time: "00:44", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154489/play'
+						,srcimg:require('@/assets/banner1/新-教学视频小节封面_04.png')
 					},
 					{
-						id: 4, title: "2.1新建与保存计划文件", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154489/play'
-						,srcimg:require('@/assets/banner1/新-教学视频小节封面_02.png')
+						id: 5, title: "2.2如何找回备份文件", tips: "软件学习", time: "00:47", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154490/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_05.png')
 					},
 					{
-						id: 5, title: "2.2如何找回备份文件", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154490/play'
-						,srcimg: require('@/assets/banner1/新-教学视频小节封面_02.png')
+						id: 6, title: "3.1如何打开黑白模式", tips: "软件学习", time: "00:21", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154492/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_06.png')
 					},
 					{
-						id: 6, title: "3.1如何打开黑白模式", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154492/play'
-						,srcimg: require('@/assets/banner1/新-教学视频小节封面_02.png')
+						id: 7, title: "3.2如何设置护眼模式", tips: "软件学习", time: "00:17", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154493/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_07.png')
 					},
 					{
-						id: 7, title: "3.2如何设置护眼模式", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154493/play'
-						,srcimg: require('@/assets/banner1/新-教学视频小节封面_02.png')
+						id: 8, title: "3.3多文件之间如何切换", tips: "软件学习", time: "00:24", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154494/play'
+						,srcimg:require('@/assets/banner1/新-教学视频小节封面_08.png')
 					},
 					{
-						id: 8, title: "3.3多文件之间如何切换", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154494/play'
-						,srcimg:require('@/assets/banner1/新-教学视频小节封面_02.png')
+						id: 9, title: "4.1如何添加休息日", tips: "软件学习", time: "01:09", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154496/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_09.png')
 					},
 					{
-						id: 9, title: "4.1如何添加休息日", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154496/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_09.png'
+						id: 10, title: "4.2如何绘制常规工作", tips: "软件学习", time: "01:22", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154497/play'
+						,srcimg:require('@/assets/banner1/新-教学视频小节封面_10.png')
 					},
 					{
-						id: 10, title: "4.2如何绘制常规工作", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154497/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_10.png'
+						id: 11, title: "4.3如何绘制穿插工作", tips: "软件学习", time: "00:51", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154498/play'
+						,srcimg:require('@/assets/banner1/新-教学视频小节封面_11.png')
 					},
 					{
-						id: 11, title: "4.3如何绘制穿插工作", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154498/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_11.png'
+						id: 12, title: "4.4如何连接和断开工作", tips: "软件学习", time: "00:48", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154499/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_12.png')
 					},
 					{
-						id: 12, title: "4.4如何连接和断开工作", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154499/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_12.png'
+						id: 13, title: "4.5如何设置父子结构", tips: "软件学习", time: "00:39", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154500/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_13.png')
 					},
 					{
-						id: 13, title: "4.5如何设置父子结构", tips: "软件学习", time: "", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154500/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_13.png'
+						id: 14, title: "4.6如何添加里程碑以及设置里程碑预警", tips: "软件学习", time: "01:03", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154501/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_14.png')
 					},
 					{
-						id: 14, title: "4.6如何添加里程碑以及设置里程碑预警", tips: "软件学习", time: "时长：1分钟", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154501/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_14.png'
+						id: 15, title: "4.7如何快速复制工作", tips: "软件学习", time: "00:38", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154502/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_15.png')
 					},
 					{
-						id: 15, title: "4.7如何快速复制工作", tips: "软件学习", time: "时长：38秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154502/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_15.png'
+						id: 16, title: "4.8如何设置分区", tips: "软件学习", time: "00:35", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154503/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_16.png')
 					},
 					{
-						id: 16, title: "4.8如何设置分区", tips: "软件学习", time: "时长：35秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154503/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_16.png'
+						id: 17, title: "4.9如何添加图片和文字标注", tips: "软件学习", time: "00:44", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154504/play'
+						,srcimg:require('@/assets/banner1/新-教学视频小节封面_17.png')
 					},
 					{
-						id: 17, title: "4.9如何添加图片和文字标注", tips: "软件学习", time: "时长：44秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154504/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_17.png'
+						id: 18, title: "4.10快速优化图幅展示", tips: "软件学习", time: "00:53", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154505/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_18.png')
 					},
 					{
-						id: 18, title: "4.10快速优化图幅展示", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154505/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_18.png'
+						id: 19, title: "6.1如何快速形成周计划、月计划", tips: "", time: "00:56", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154822/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_19.png')
 					},
 					{
-						id: 19, title: "6.1如何快速形成周计划、月计划", tips: "", time: "时长：56秒", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154822/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_19.png'
+						id: 20, title: "6.2前锋线基础原理讲解", tips: "软件学习", time: "01:45", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154823/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_20.png')
 					},
 					{
-						id: 20, title: "6.2前锋线基础原理讲解", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154823/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_20.png'
+						id: 21, title: "7.1工期固定资源均衡", tips: "软件学习", time: "00:51", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154824/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_21.png')
 					},
 					{
-						id: 21, title: "7.1工期固定资源均衡", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154824/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_21.png'
+						id: 22, title: "7.2资源限量工期最短", tips: "软件学习", time: "00:56", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154825/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_22.png')
 					},
 					{
-						id: 22, title: "7.2资源限量工期最短", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154825/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_22.png'
+						id: 23, title: "8.1如何导出图片", tips: "软件学习", time: "00:33", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154507/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_23.png')
 					},
 					{
-						id: 23, title: "8.1如何导出图片", tips: "", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154507/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_23.png'
+						id: 24, title: "8.2如何导出Project文件", tips: "软件学习", time: "00:53", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154508/play'
+						,srcimg:require('@/assets/banner1/新-教学视频小节封面_24.png')
 					},
 					{
-						id: 24, title: "8.2如何导出Project文件", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154508/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_24.png'
+						id: 25, title: "8.3如何导出表格区域信息", tips: "软件学习", time: "00:46", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154509/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_25.png')
 					},
 					{
-						id: 25, title: "8.3如何导出表格区域信息", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154509/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_25.png'
+						id: 26, title: "8.4如何导出PDF文件", tips: "软件学习", time: "00:42", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154510/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_26.png')
 					},
 					{
-						id: 26, title: "8.4如何导出PDF文件", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154510/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_26.png'
+						id: 27, title: "9.1如何导入Project文件，形成网络图", tips: "软件学习", time: "01:00", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154826/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_27.png')
 					},
 					{
-						id: 27, title: "9.1如何导入Project文件，形成网络图", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154826/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_27.png'
+						id: 28, title: "9.2如何使用Excel文件，形成网络图", tips: "软件学习", time: "05:42", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154827/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_28.png')
 					},
 					{
-						id: 28, title: "9.2如何使用Excel文件，形成网络图", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/154827/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_28.png'
+						id: 29, title: "10.1AI助手- AI助手介绍+操作说明", tips: "软件学习", time: "14:20", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162580/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_29.png')
 					},
 					{
-						id: 29, title: "10.1AI助手- AI助手介绍+操作说明", tips: "软件学习", time: "时长：", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162580/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_29.png'
+						id: 30, title: "10.2AI助手-AI生成施工总控计划", tips: "软件学习", time: "08:13", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162581/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_30.png')
 					},
 					{
-						id: 30, title: "10.2AI助手-AI生成施工总控计划", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162581/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_30.png'
+						id: 31, title: "10.3AI助手-AI推荐非实体工作", tips: "软件学习", time: "01:23", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162582/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_31.png')
 					},
 					{
-						id: 31, title: "10.3AI助手-AI推荐非实体工作", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162582/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_31.png'
-					},
-					{
-						id: 32, title: "10.4AI助手-AI推荐工作", tips: "软件学习", time: "时长", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162583/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_32.png'
+						id: 32, title: "10.4AI助手-AI推荐工作", tips: "软件学习", time: "04:31", src: 'https://jzkt.fwxgx.com/courses/24304/videos/162583/play'
+						,srcimg: require('@/assets/banner1/新-教学视频小节封面_32.png')
 					},
 				],
 				pics1: [
 				{
-						id: 1, title: "", tips: "专家课堂", time: "时长：108分钟", src: 'https://jzkt.fwxgx.com/courses/23597/videos/134798/play',
-						srcimg: '/banner1/新-教学视频小节封面_01.png',
+						id: 1, title: "", tips: "专家课堂", time: "1:48:27", src: 'https://jzkt.fwxgx.com/courses/23597/videos/134798/play',
+						srcimg: require('@/assets/banner2/5-.png'),
 					
 					},
 					{
-						id: 2, title: "", tips: "专家课堂", time: "时长：89分钟", src: 'https://jzkt.fwxgx.com/courses/23598/videos/134799/play',
-						srcimg: '/banner1/新-教学视频小节封面_01.png'
+						id: 2, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23598/videos/134799/play',
+						srcimg: require('@/assets/banner2/7-.png'),
 					},
 					{
-						id: 3, title: "", tips: "专家课堂", time: "时长：58分钟", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
-						,srcimg: '../assets/banner1/新-教学视频小节封面_03.png'
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
+					},
+					{
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
+					},
+					{
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
+					},
+					{
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
+					},
+					{
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
+					},
+					{
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
+					},
+					{
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
+					},
+					{
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
+					},
+					{
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
+					},
+					{
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
+					},
+					{
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
+					},
+					{
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
+					},
+					{
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
+					},
+					{
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
+					},
+					{
+						id: 3, title: "", tips: "专家课堂", time: "", src: 'https://jzkt.fwxgx.com/courses/23599/videos/134800/play'
+						,srcimg: require('@/assets/banner2/9-.png'),
 					},
 				]
 			}
@@ -520,7 +593,7 @@ a {
 				width: 100%;
 				margin-top: 13px;
 				height: 22px;
-        justify-content: space-between;
+        justify-content: flex-end;
 				
 				
 				.title {
